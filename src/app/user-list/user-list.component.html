@@ -1,0 +1,39 @@
+<div *ngIf="users$ | async as users">
+  <div class="users-title">
+    <h1>Welcome to user management</h1>
+  </div>
+  <button
+    class="button"
+    *ngIf="usersEditable$ | async as usersEditable"
+    (click)="showModal(modal, usersEditable.canEdit)"
+    [disabled]="!usersEditable.canEdit"
+  >
+    Add User
+  </button>
+  <div>
+    <app-user *ngFor="let user of users" [user]="user"></app-user>
+  </div>
+</div>
+
+<dialog #modal>
+  <form [formGroup]="userForm">
+    <div>
+      <label for="name">Name of the user</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+    <div>
+      <label for="name">Enabled:</label>
+      <input id="name" formControlName="active" type="checkbox" />
+    </div>
+  </form>
+  <div class="button-wrapper">
+    <button class="button-danger small" (click)="modal.close()">Cancel</button>
+    <button
+      class="button small"
+      (click)="addUser(modal)"
+      [disabled]="!userForm.valid"
+    >
+      OK
+    </button>
+  </div>
+</dialog>

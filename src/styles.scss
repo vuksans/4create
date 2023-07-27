@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* CSS */
+
+/* CSS */
+.button {
+  background-color: #509af8;
+  border: 1px solid transparent;
+  border-color: #509af8;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  width: 100px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: #509af8;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  &.small {
+    padding: 0.25rem 0.5rem;
+    font-size: 12px;
+    width: 80px;
+  }
+}
+
+.button-danger {
+  @extend .button;
+  background-color: #e70d0d;
+  border-color: #e70d0d;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #509af8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-wrapper {
+  float: right;
+  margin-top: 1rem;
+  button {
+    margin-left: 0.5rem;
+  }
+}
+
+dialog {
+  top: -30%;
+  border-radius: 10px;
+  border: 2px solid #509af8;
+}

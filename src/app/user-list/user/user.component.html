@@ -1,0 +1,15 @@
+<div class="info" *ngIf="user">
+  <div class="info__title">{{ user.name }}</div>
+  <label class="switch">
+    <input
+      type="checkbox"
+      [formControl]="userActiveControl"
+      (change)="activeChanged()"
+    />
+    <div class="slider"></div>
+    <div class="slider-card">
+      <div class="slider-card-face slider-card-front"></div>
+      <div class="slider-card-face slider-card-back"></div>
+    </div>
+  </label>
+</div>
